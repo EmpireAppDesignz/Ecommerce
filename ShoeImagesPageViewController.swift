@@ -53,10 +53,10 @@ class ShoeImagesPageViewController: UIPageViewController {
     func turnToPage(index: Int)
     {
         let controller = controllers[index]
-        var direction = UIPageViewControllerNavigationDirection.forward
+        var direction = UIPageViewController.NavigationDirection.forward
         
         if let currentVC = viewControllers?.first {
-            let currentIndex = controllers.index(of: currentVC)!
+            let currentIndex = controllers.firstIndex(of: currentVC)!
             if currentIndex > index {
                 direction = .reverse
             }
@@ -87,7 +87,7 @@ extension ShoeImagesPageViewController : UIPageViewControllerDataSource
 {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
-        if let index = controllers.index(of: viewController) {
+        if let index = controllers.firstIndex(of: viewController) {
             if index > 0 {
                 return controllers[index-1]
             }
@@ -98,7 +98,7 @@ extension ShoeImagesPageViewController : UIPageViewControllerDataSource
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController?
     {
-        if let index = controllers.index(of: viewController) {
+        if let index = controllers.firstIndex(of: viewController) {
             if index < controllers.count - 1 {
                 return controllers[index + 1]
             }

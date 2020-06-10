@@ -26,7 +26,7 @@ class FeedTableViewController : UITableViewController
         self.tableView.reloadData()
     
         self.tableView.estimatedRowHeight = tableView.rowHeight
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
